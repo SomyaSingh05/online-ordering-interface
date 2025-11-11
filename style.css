@@ -53,7 +53,17 @@
         /* strat */
        
      
+      @media (max-width: 320px) {
+    .header-location {
+        margin-right: 25px; 
+    }
+    .header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
+    
+}
 
 
 
