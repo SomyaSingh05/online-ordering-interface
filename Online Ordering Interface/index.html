@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Catalog</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="script.js" ></script>
+    
+    
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-location">
+            <img style="width: 120px;" src="assets/Tamasha_logo_versions-1-2048x839.webp" alt="Tamasha Logo">
+            <div class="header-location-text">
+                <!-- <strong>Tamasha</strong>
+                <span>Calgary, Canada</span> -->
+            </div>
+        </div>
+        <div class="header-actions">
+            <button class="header-button">Book a Table</button>
+            
+            <button class="header-cart-btn" id="header-cart-btn" style="display: none;">
+                <i class="ph-bold ph-shopping-cart"></i>
+                <span class="cart-count" id="header-cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="search-container">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="search" id="search-bar" placeholder="Search for items...">
+            </div>
+
+            <div class="banner-carousel">
+                <div class="banner-card">
+                    <img src="assets/1.jpg" alt="Indulgent Brownies Banner"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x225/9b59b6/ffffff?text=Image+Error';">
+                </div>
+                <div class="banner-card">
+                    <img src="assets/2.jpg" alt="New Lattes Banner"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x225/3498db/ffffff?text=Image+Error';">
+                </div>
+                <div class="banner-card">
+                    <img src="assets/Red Beige and Gold Photo Biryani Food Restaurant Promotion Banner (1).png" alt="Summer Specials Banner"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x225/e74c3c/ffffff?text=Image+Error';">
+                </div>
+            </div>
+
+            <div class="filter-container">
+                <label for="veg-toggle">Veg only</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="veg-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <section class="menu-catalog">
+                <h2 class="section-header" id="newly-launched">Newly Launched</h2>
+                
+                <div class="catalog-grid" id="catalog-items">
+
+                    <h3 class="category-header" id="category-hot-coffee">Hot Coffee</h3>
+                    
+                    <div class="item-card" 
+                         data-veg="true"
+                         data-name="Vanilla Bean Latte"
+                         data-price="260" data-img-src="assets/REC-506950_VanillaLatte.webp"
+                         data-full-desc="Our signature espresso with milk and house-made vanilla syrup. This is a much longer, more detailed description of the item, explaining its origin, flavor profile, and why it's a customer favorite.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Vanilla Bean Latte</h4>
+                            <p class="item-price">₹260</p>
+                            <p class="item-desc">Our signature espresso with milk and house-made vanilla...</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/REC-506950_VanillaLatte.webp" alt="Vanilla Bean Latte"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/d2b48c/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Classic Cappuccino"
+                         data-price="220" data-img-src="assets/Cappuccino-1.webp"
+                         data-full-desc="A perfect balance of espresso, steamed milk, and rich foam. This classic Italian coffee is a timeless choice for any time of the day, crafted to perfection by our baristas.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Classic Cappuccino</h4>
+                            <p class="item-price">₹220</p>
+                            <p class="item-desc">A perfect balance of espresso, steamed milk, and foam.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/Cappuccino-1.webp" alt="Classic Cappuccino"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/c0a080/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="category-header" id="category-cold-coffee">Cold Coffee</h3>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Vanilla Bean Iced Latte"
+                         data-price="260" data-img-src="assets/iced-vanilla-bean-latte.jpg"
+                         data-full-desc="Our signature espresso, chilled milk, and house-made vanilla syrup served over ice. It's the perfect refreshing pick-me-up for a warm day.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Vanilla Bean Iced Latte</h4>
+                            <p class="item-price">₹260</p>
+                            <p class="item-desc">Our signature espresso, chilled milk, and vanilla over ice.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/iced-vanilla-bean-latte.jpg" alt="Vanilla Bean Iced Latte"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/d2b48c/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Iced Americano"
+                         data-price="200" data-img-src="assets/Iced-Americano-008s.webp"
+                         data-full-desc="Espresso shots topped with cold water, served over ice. A crisp, bold, and invigorating coffee experience. Simple, pure, and strong.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Iced Americano</h4>
+                            <p class="item-price">₹200</p>
+                            <p class="item-desc">Espresso shots topped with cold water, served over ice.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/Iced-Americano-008s.webp" alt="Iced Americano"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/a08060/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <h3 class="category-header" id="category-food-bakery">Food & Bakery</h3>
+                    
+                    <div class="item-card"
+                         data-veg="false"
+                         data-name="Chicken Croissant"
+                         data-price="280" data-img-src="assets/195A8804-1-scaled.jpg"
+                         data-full-desc="A flaky, buttery croissant filled with a creamy chicken and herb mixture. A satisfying and delicious savory treat. (Contains chicken).">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-non-veg-icon"></i>
+                            <h4 class="item-name">Chicken Croissant</h4>
+                            <p class="item-price">₹280</p>
+                            <p class="item-desc">Flaky croissant with a creamy chicken and herb filling.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/195A8804-1-scaled.jpg" alt="Chicken Croissant"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/e0c0a0/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Indulgent Brownie"
+                         data-price="180" data-img-src="assets/recipe_4391.jpg"
+                         data-full-desc="Rich, fudgy chocolate brownie with a beautiful raspberry swirl. This brownie is dense, moist, and perfectly decadent. A must-try for chocolate lovers.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Indulgent Brownie</h4>
+                            <p class="item-price">₹180</p>
+                            <p class="item-desc">Rich, fudgy chocolate brownie with raspberry swirl.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/recipe_4391.jpg" alt="Indulgent Brownie"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/b09070/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="category-header" id="category-desserts">Desserts</h3>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Garam Gulab Jamun"
+                         data-price="280" data-img-src="assets/63799510.avif"
+                         data-full-desc="Soft, spongy milk-solid balls soaked in warm, sweet rose-flavored syrup. A classic Indian dessert.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Garam Gulab Jamun</h4>
+                            <p class="item-price">₹280</p>
+                            <p class="item-desc">Soft, spongy milk-solid balls in sweet syrup.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/63799510.avif" alt="Garam Gulab Jamun"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/e0c0a0/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Shahi Ras-Malai"
+                         data-price="180" data-img-src="assets/rasmalai-413.webp"
+                         data-full-desc="Rich cheesecake dumplings soaked in creamy, saffron-infused milk, garnished with pistachios.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Shahi Ras-Malai</h4>
+                            <p class="item-price">₹180</p>
+                            <p class="item-desc">Cheesecake dumplings in creamy, saffron milk.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/rasmalai-413.webp" alt="Shahi Ras-Malai"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/b09070/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3 class="category-header" id="category-basmati-khazana">Basmati Khazana</h3>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Plain Rice"
+                         data-price="280" data-img-src="assets/simple-basmati-rice-recipe-for-the-perfect-side.jpg"
+                         data-full-desc="Steamed, fluffy Basmati rice. The perfect simple accompaniment to any curry or dish.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Plain Rice</h4>
+                            <p class="item-price">₹280</p>
+                            <p class="item-desc">Steamed, fluffy Basmati rice.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/simple-basmati-rice-recipe-for-the-perfect-side.jpg" alt="Plain Rice"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/e0c0a0/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Saffron Rice"
+                         data-price="180" data-img-src="assets/1397244161464.webp"
+                         data-full-desc="Aromatic Basmati rice cooked with precious saffron strands and whole spices. Fragrant and delicious.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Saffron Rice</h4>
+                            <p class="item-price">₹180</p>
+                            <p class="item-desc">Aromatic Basmati rice with saffron.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/1397244161464.webp" alt="Saffron Rice"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/b09070/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3 class="category-header" id="category-breads">Breads</h3>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Tandoori Roti"
+                         data-price="280" data-img-src="assets/image-62.png"
+                         data-full-desc="Classic whole wheat bread cooked in a traditional tandoor oven. Available plain or with butter.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Tandoori Roti</h4>
+                            <p class="item-price">₹280</p>
+                            <p class="item-desc">Whole wheat bread cooked in a tandoor.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/image-62.png" alt="Tandoori Roti"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/e0c0a0/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Missi Roti"
+                         data-price="180" data-img-src="assets/IMG_4649-2455.webp"
+                         data-full-desc="Savory flatbread made from gram flour (besan) and spices. A flavorful and rustic choice.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Missi Roti</h4>
+                            <p class="item-price">₹180</p>
+                            <p class="item-desc">Savory flatbread made from gram flour and spices.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/IMG_4649-2455.webp" alt="Missi Roti"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/b09070/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3 class="category-header" id="category-ice-cream">Ice Cream</h3>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Vanilla / Strawberry"
+                         data-price="280" data-img-src="assets/StrawberryIceCream-1.webp"
+                         data-full-desc="Two scoops of classic, creamy ice cream. Choose from rich Vanilla Bean or sweet Strawberry.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Vanilla / Strawberry</h4>
+                            <p class="item-price">₹280</p>
+                            <p class="item-desc">Two scoops of classic, creamy ice cream.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/StrawberryIceCream-1.webp" alt="Vanilla / Strawberry"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/e0c0a0/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Gulab Jamun with Ice Cream"
+                         data-price="180" data-img-src="assets/Gulab-Jamun-with-Ice-Cream-Fresh-Fusion.webp"
+                         data-full-desc="The perfect combination of hot and cold! Warm Gulab Jamun served with a scoop of creamy Vanilla ice cream.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Gulab Jamun with Ice Cream</h4>
+                            <p class="item-price">₹180</p>
+                            <p class="item-desc">Warm Gulab Jamun served with Vanilla ice cream.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/Gulab-Jamun-with-Ice-Cream-Fresh-Fusion.webp" alt="Gulab Jamun with Ice Cream"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/b09070/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3 class="category-header" id="category-drinks">Drinks</h3>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="Orange Juice"
+                         data-price="280" data-img-src="assets/Orange-Ginger-Juice-1-of-1.jpeg"
+                         data-full-desc="Freshly squeezed orange juice, packed with vitamins. A healthy and refreshing choice.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">Orange Juice</h4>
+                            <p class="item-price">₹280</p>
+                            <p class="item-desc">Freshly squeezed orange juice.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/Orange-Ginger-Juice-1-of-1.jpeg" alt="Orange Juice"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/e0c0a0/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-card"
+                         data-veg="true"
+                         data-name="COKE/DIET COKE/SPRITE"
+                         data-price="180" data-img-src="assets/dko-for-everyone-timt-campaign-card.webp"
+                         data-full-desc="Chilled canned soft drinks. Choose your favorite classic fizz.">
+                        <div class="item-info">
+                            <i class="ph-fill ph-square item-veg-icon"></i>
+                            <h4 class="item-name">COKE/DIET COKE/SPRITE</h4>
+                            <p class="item-price">₹180</p>
+                            <p class="item-desc">Chilled canned soft drinks.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="assets/dko-for-everyone-timt-campaign-card.webp" alt="COKE/DIET COKE/SPRITE"
+                                onerror="this.onerror=null;this.src='https://placehold.co/110x110/b09070/333333?text=Image+Error';">
+                            <div class="item-add-control">
+                                <button class="add-btn">ADD</button>
+                                <div class="quantity-stepper" style="display: none;">
+                                    <button class="stepper-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">1</span>
+                                    <button class="stepper-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="page-footer">
+    <div class="footer-content">
+        <img style="width: 120px;" src="assets/Tamasha_logo_versions-1-2048x839.webp" alt="Tamasha Logo">
+        <!-- <h3 class="footer-title">Tamasha</h3> -->
+        <div class="footer-location">
+            <i class="ph ph-map-pin"></i>
+            <span style="color: #ffffff;">Calgary, Canada</span>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-powered-by">
+                <span style="color: #ffffff;">Powered by</span>
+                <img src="assets/Bytepaper (1).png" alt="Powered by Bytepaper"
+                    onerror="this.onerror=null;this.src='https://placehold.co/100x30/dddddd/555555?text=Image+Error';">
+            </div>
+            <p class="footer-copy">&copy; 2025 Tamasha. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+    <div id="search-page">
+        <div class="search-page-header">
+            <div class="search-container">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="search" id="search-page-input" placeholder="Search for items...">
+            </div>
+        </div>
+        <div class="search-page-results" id="search-results-list">
+            <!-- Search results will be dynamically injected here -->
+        </div>
+        <div class="search-page-footer">
+            <button id="search-back-btn">BACK</button>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="item-modal-overlay"></div>
+    <div class="modal-panel" id="item-modal-panel">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="item-modal-close-btn">
+                <i class="ph ph-x"></i>
+            </button>
+            <img src="https://placehold.co/600x300/cccccc/333333?text=Item+Image" alt="" class="modal-image" id="modal-img">
+            <div class="modal-details">
+                <i class="" id="modal-veg-icon"></i>
+                <h3 class="modal-name" id="modal-name"></h3>
+                <p class="modal-desc" id="modal-desc"></p>
+                <p class="modal-price" id="modal-price"></p>
+
+                <!-- This is the container for the modal's Add/Stepper button -->
+                <div id="modal-add-control" class="item-add-control"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="menu-fab" id="menu-fab-btn">
+        <i class="ph ph-list"></i>
+        <span>MENU</span>
+    </button>
+    
+    <div class="modal-overlay" id="menu-overlay"></div>
+    <div class="modal-panel" id="menu-panel">
+        <div class="menu-panel-header">
+            <h3>Menu</h3>
+            <button class="modal-close-btn" id="menu-close-btn">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <ul class="menu-category-list">
+            <!-- Menu links will be dynamically injected here -->
+            <li><a href="#newly-launched" class="menu-category-link">Newly Launched</a></li>
+            <li><a href="#category-hot-coffee" class="menu-category-link">Hot Coffee</a></li>
+            <li><a href="#category-cold-coffee" class="menu-category-link">Cold Coffee</a></li>
+            <li><a href="#category-food-bakery" class="menu-category-link">Food & Bakery</a></li>
+            <li><a href="#category-desserts" class="menu-category-link">Desserts</a></li>
+            <li><a href="#category-basmati-khazana" class="menu-category-link">Basmati Khazana</a></li>
+            <li><a href="#category-breads" class="menu-category-link">Breads</a></li>
+            <li><a href="#category-ice-cream" class="menu-category-link">Ice Cream</a></li>
+            <li><a href="#category-drinks" class="menu-category-link">Drinks</a></li>
+        </ul>
+    </div>
+    
+    <div class="modal-overlay" id="cart-modal-overlay"></div>
+    <div class="modal-panel" id="cart-modal-panel">
+        <div class="menu-panel-header">
+            <h3>Your Order</h3>
+            <button class="modal-close-btn" id="cart-modal-close-btn">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items-list" id="cart-items-list">
+            <!-- Cart items will be dynamically injected here -->
+        </div>
+        <div>
+            <p class="item-desc" style="padding: 0 1.5rem; color: var(--text-light); text-align: center;">After clicking on Place Order, your order will be sent to the kitchen</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button class="cart-place-order-btn" id="place-order-btn">
+                Place Order
+            </button>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="booking-modal-overlay"></div>
+    <div class="modal-panel" id="booking-modal-panel">
+        <div class="menu-panel-header"> <h3>Book Your Table</h3>
+            <button class="modal-close-btn" id="booking-modal-close-btn">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        
+        <div class="booking-form-content">
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="book-name">Name</label>
+                    <input type="text" id="book-name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-phone">Phone Number</label>
+                    <input type="tel" id="book-phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group-inline">
+                    <div class="form-group">
+                        <label for="book-guests">Guests</label>
+                        <input type="number" id="book-guests" name="guests" min="1" max="10" value="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-date">Date</label>
+                        <input type="date" id="book-date" name="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="book-time">Time</label>
+                    <input type="time" id="book-time" name="time" step="900" required> </div>
+                
+                <button type="submit" class="booking-submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    
+</body>
+</html>
